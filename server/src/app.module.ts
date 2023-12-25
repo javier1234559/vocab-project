@@ -1,24 +1,17 @@
 import { Module } from '@nestjs/common';
-import { JwtModule } from '@nestjs/jwt';
 import { UsersModule } from './users/users.module';
-import { databaseProviders } from './database/database.provider';
-import { ConfigModule } from '@nestjs/config';
-import { RolesGuard } from './commons/guard/roles/roles.guard';
-import { CollectionsModule } from './collections/collections.module';
+import { LessonsModule } from './lessons/lessons.module';
+import { CommonModule } from '~/common/common.module';
+import { SeedsModule } from '~/common/seeds/seed.module';
 
 @Module({
   imports: [
+    CommonModule,
     UsersModule,
-    ConfigModule.forRoot({ envFilePath: '.env' }),
-    JwtModule.register({
-      global: true,
-      secret: process.env.ACCESS_TOKEN || 'team vocab build',
-      signOptions: { expiresIn: '7d' },
-    }),
-    CollectionsModule,
+    LessonsModule,
   ],
   controllers: [],
-  providers: [...databaseProviders],
+  providers: [],
 })
 
-export class AppModule {}
+export class AppModule { }

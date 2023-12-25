@@ -1,76 +1,49 @@
-import { Schema, Document, ObjectId } from 'mongoose';
-import { Connection, model } from 'mongoose';
-import { MONGODB_CONFIG } from 'src/database/database.config';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Document } from 'mongoose';
 
-export enum ROLE_PERMISSION {
-  'USER' = 'user',
-  'ADMIN' = 'admin',
-  'CARD' = 'card',
+export type UserDocument = User & Document;
+
+@Schema({timestamps: true})
+export class User {
+  @Prop({ required: false, unique: true })
+  uid: String;
+
+  @Prop({ required: true, unique: true })
+  email: String;
+
+  @Prop({ required: true })
+  password: String;
+
+  @Prop({ required: true, unique: true })
+  nick_name: String;
+
+  @Prop({ required: false })
+  age: Number;
+
+  @Prop({ required: false })
+  gender: String;
+
+  @Prop({
+    required: false,
+    default:
+      'https://drive.google.com/uc?id=1Dp7JlD7y6v96Ve3O9hxPkUR0mmMhPBmW&export=download',
+  })
+  avatar: String;
+
+  @Prop({ required: false })
+  streak: Number;
+
+  @Prop({ required: false, default: 0 })
+  rank: Number;
+
+  @Prop({ required: false, default: 0 })
+  score: Number;
+
+  @Prop({ required: false, default: 0 })
+  level: Number;
+
+  @Prop({ required: true, default: false })
+  isAdmin: boolean;
 }
 
-export interface IUsers extends Document {
-  _id: ObjectId;
-  full_name: String | null;
-  age: String | null;
-  Created_at: Date | null;
-  avt: String | null;
-  birthday: String | null;
-  uid: String | null;
-  updated_at: Date | null;
-  password: String | null;
-  strek: String | null;
-  access_token: String | null;
-  nick_name: String | null;
-  gender: String | null;
-  address: String | null;
-  rank: String | null;
-  email: String | null;
-  score: Number | null;
-  level: String | null;
-  role: String[] | null;
-}
-
-const UsersSchema: Schema = new Schema(
-  {
-    uid: { type: String },
-    full_name: { type: String, required: true },
-    age: { type: String },
-    avt: {
-      type: String,
-      default:
-        'https://drive.google.com/uc?id=1Dp7JlD7y6v96Ve3O9hxPkUR0mmMhPBmW&export=download',
-    },
-    password: { type: String },
-    strek: { type: Number, default: 0 },
-    birthday: { type: String },
-    access_token: { type: String },
-    gender: { type: String },
-    address: { type: String },
-    rank: { type: String },
-    email: { type: String, unique: true },
-    score: { type: Number, default: 0 },
-    level: { type: String },
-    role: {
-      type: Array,
-      default: ROLE_PERMISSION.USER,
-    },
-  },
-  {
-    timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' },
-  },
-);
-
-// read documents :: https://docs.nestjs.com/recipes/mongodb;
-
-//có 2 cách sài model nhé
-export const UsersModel = model<IUsers>('Users', UsersSchema);
-
-export const UserProvide: string = 'User';
-export const usersProvider = [
-  {
-    provide: UserProvide,
-    useFactory: (connection: Connection) =>
-      connection.model(UserProvide, UsersSchema),
-    inject: [MONGODB_CONFIG.DATABASE_CONNECTION],
-  },
-];
+export const UserSchema = SchemaFactory.createForClass(User);
