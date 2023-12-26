@@ -23,6 +23,7 @@ import { SeedsModule } from '~/common/seeds/seed.module';
 
 export class CommonModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(LoggerMiddleware).forRoutes('*');
+    consumer.apply(LoggerMiddleware)
+            .forRoutes('*');
   }
 }
