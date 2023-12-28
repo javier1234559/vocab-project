@@ -1,6 +1,8 @@
+'use client'
 
 import { Button, Input } from '@nextui-org/react'
 import Image from 'next/image'
+
 type Props = {
 }
 
@@ -10,12 +12,29 @@ export default function LoginForm({ }: Props) {
       <div className="container h-full px-6 py-20">
         <div
           className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
-          <div className="mb-12 md:mb-0 md:w-8/12 lg:w-6/12">
-            {/* <Image
-              fill
-              src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
-              alt="Phone image"
-            /> */}
+          <div className="lg:block  mb-12 md:mb-0 md:w-8/12 lg:w-6/12">
+            <div className='relative'>
+              <Image
+                height={500}
+                width={500}
+                src="/images/loginImage.png"
+                alt="Phone image"
+                className='z-1 absolute top-0 left-0 transform translate-x-[-1000%] translate-y-[-50%]'
+              />
+              <svg className='absolute top-0 left-0 transform translate-x-[-30%] translate-y-[-50%]' width="607" height="574" viewBox="0 0 807 774" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_f_35_870)">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M344.057 34.7341C400.259 44.5338 439.251 104.448 492.954 127.565C582.898 166.281 712.692 112.419 762.335 214.781C808.491 309.953 735.252 433.874 686.751 527.166C647.018 603.593 581.568 646.029 516.853 686.969C462.289 721.488 405.077 743.274 344.057 743.962C282.547 744.656 219.031 736.113 169.004 690.892C118.775 645.489 94.674 570.758 72.0945 498.13C48.0547 420.805 18.0613 339.883 34.9131 259.582C52.1391 177.497 103.719 112.221 161.971 69.853C216.517 30.1806 281.709 23.8629 344.057 34.7341Z" fill="#668099" fillOpacity="0.14" />
+                </g>
+                <defs>
+                  <filter id="filter0_f_35_870" x="0" y="0" width="807" height="774" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                    <feGaussianBlur stdDeviation="15" result="effect1_foregroundBlur_35_870" />
+                  </filter>
+                </defs>
+              </svg>
+
+            </div>
           </div>
           <div className="md:w-8/12 lg:ml-6 lg:w-5/12">
             <h2 className="mb-4 text-center text-4xl font-bold leading-9 tracking-tight">Sign in to your account</h2>
@@ -23,14 +42,14 @@ export default function LoginForm({ }: Props) {
               <div className="relative mb-6" data-te-input-wrapper-init>
                 <Input
                   type="text"
-                  className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                  className="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                   id="exampleFormControlInput3"
                   placeholder="Email address" />
               </div>
               <div className="relative mb-6" data-te-input-wrapper-init>
                 <Input
                   type="password"
-                  className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                  className="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                   id="exampleFormControlInput33"
                   placeholder="Password" />
               </div>
@@ -58,7 +77,7 @@ export default function LoginForm({ }: Props) {
               {/* <!-- Submit button --> */}
               <Button
                 // type="submit"
-                className="inline-block w-full rounded bg-primary px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                className='rounded uppercase inline-block w-full outline-none focus:outline-none active:outline-none'
                 data-te-ripple-init
                 data-te-ripple-color="light">
                 Sign in

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import MainLayout from '~/components/Layout/MainLayout';
 import { ThemeProvider } from '~/components/ThemeProvider'
 import '~/styles/globals.css'
-
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -19,7 +19,9 @@ export default function RootLayout({
     <html lang="en" className='light'>
       <body>
         <ThemeProvider>
-          {children}
+          <MainLayout>
+            {children}
+          </MainLayout>
         </ThemeProvider>
       </body>
     </html>

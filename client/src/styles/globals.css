@@ -10,6 +10,7 @@
     --secondary: #d1cfc7;
     --accent: #668099;
   }
+
   .dark {
     --text: #e7ebef;
     --background: #1c1b17;
@@ -17,4 +18,20 @@
     --secondary: #38362e;
     --accent: #668099;
   }
+
+  li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@layer components {
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
 }
