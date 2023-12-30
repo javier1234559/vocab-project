@@ -30,7 +30,7 @@ function ItemVocab({ id, index, idAnimate, item, handleOnChange }: Props) {
         Number(id) === idAnimate ? 'animate__zoomIn' : ''
       }   animate__faster py-2 `}
     >
-      <div className='flex flex-col rounded-md bg-[#f1ebeb]'>
+      <div className='flex flex-col rounded-md bg-secondary'>
         <div className='flex justify-between py-4 mx-6'>
           <span>{item.index}</span>
           <div className='flex'>

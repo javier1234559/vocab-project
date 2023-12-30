@@ -10,7 +10,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
   return (
     <div >
       <Header />
-      <div className="h-dvh">
+      <div className="min-h-screen container">
         {children}
       </div>
       <Footer />

@@ -38,8 +38,8 @@ function LessonForm() {
 
   return (
     <form>
-      <div className='collection-header my-8'>
-        <div className='flex justify-between'>
+      <div className=' my-8'>
+        <div className='flex justify-between mb-4'>
           <h1 className='text-3xl font-bold'>Tạo học phần mới</h1>
           <Button
             onClick={handleCreateLesson}

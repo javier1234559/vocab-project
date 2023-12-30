@@ -9,19 +9,19 @@ type Props = {
 export default function LoginForm({ }: Props) {
   return (
     <section className="h-screen">
-      <div className="container h-full px-6 py-20">
+      <div className="container h-full px-6 ">
         <div
-          className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
-          <div className="lg:block  mb-12 md:mb-0 md:w-8/12 lg:w-6/12">
+          className="flex h-full flex-wrap items-center justify-center lg:justify-between">
+          <div className="lg:block hidden mb-12 md:mb-0 md:w-8/12 lg:w-6/12">
             <div className='relative'>
               <Image
                 height={500}
                 width={500}
                 src="/images/loginImage.png"
                 alt="Phone image"
-                className='z-1 absolute top-0 left-0 transform translate-x-[-1000%] translate-y-[-50%]'
+                className='z-5 absolute top-0 left-0 transform translate-x-[10%] translate-y-[-90%]'
               />
-              <svg className='absolute top-0 left-0 transform translate-x-[-30%] translate-y-[-50%]' width="607" height="574" viewBox="0 0 807 774" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className='absolute top-0 left-0 transform translate-x-[-50%] translate-y-[-50%]' width="607" height="574" viewBox="0 0 807 774" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g filter="url(#filter0_f_35_870)">
                   <path fillRule="evenodd" clipRule="evenodd" d="M344.057 34.7341C400.259 44.5338 439.251 104.448 492.954 127.565C582.898 166.281 712.692 112.419 762.335 214.781C808.491 309.953 735.252 433.874 686.751 527.166C647.018 603.593 581.568 646.029 516.853 686.969C462.289 721.488 405.077 743.274 344.057 743.962C282.547 744.656 219.031 736.113 169.004 690.892C118.775 645.489 94.674 570.758 72.0945 498.13C48.0547 420.805 18.0613 339.883 34.9131 259.582C52.1391 177.497 103.719 112.221 161.971 69.853C216.517 30.1806 281.709 23.8629 344.057 34.7341Z" fill="#668099" fillOpacity="0.14" />
                 </g>
